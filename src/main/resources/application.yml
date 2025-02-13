@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: auth
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jpa:
+    show-sql: true
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  access-expiration: "#{60 * 60 * 1000}"
+  secret:
+    key: ${JWT_SECRET_KEY}
